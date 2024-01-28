@@ -3,6 +3,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import BookingForm from "../BookingForm";
+import { BrowserRouter as Router } from "react-router-dom";
 
 describe("BookingForm Component", () => {
   test('renders the heading "Book Now"', () => {
@@ -15,7 +16,14 @@ describe("BookingForm Component", () => {
       "22:00",
     ];
     render(
-      <BookingForm availableTimes={mockAvailableTimes} dispatch={() => {}} />
+      <Router>
+        <BookingForm
+          availableTimes={mockAvailableTimes}
+          dispatch={() => {}}
+          updateAvailableTimes={() => {}}
+          onSubmit={() => {}}
+        />
+      </Router>
     );
     const headingElement = screen.getByText(/book now/i);
     expect(headingElement).toBeInTheDocument();

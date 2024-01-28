@@ -2,10 +2,10 @@ import React from "react";
 
 function Homepage() {
   return (
-    <div>
+    <article>
       <h1>Welcome to Little Lemon</h1>
       <p>Enjoy our exclusive dishes and great atmosphere.</p>
-    </div>
+    </article>
   );
 }
 
